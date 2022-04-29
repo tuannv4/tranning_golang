@@ -53,8 +53,14 @@ func main() {
 
 	// fmt.Printf("\nsub-string 2 : ")
 	// printChars(string(word2[1:]))
-	subString(1, 3, "ﾄを作成する")
+	// subString(1, 3, "ﾄを作成する")
 
+	var slice1 = []int{7, 8, 4, 3, 3, 4, 9}
+	fmt.Println("mang sau khi sort", sortArr(slice1))
+	fmt.Println("rank :", rankSort(slice1))
+	fmt.Printf("\n\n\n")
+	var slice2 = []int{7, 8, 4, 3, 3, 4, 9}
+	fmt.Println(rankSort2(slice2))
 }
 
 type Infor struct {
@@ -233,4 +239,75 @@ func subString(startIndex int, endIndex int, s string) string {
 	subS := string(runes[startIndex:endIndex])
 	fmt.Printf("%d indexStart %d indexEnd data after sub : %s ", startIndex, endIndex, subS)
 	return subS
+}
+
+// có 2 cách làm
+// cách 1: sort -> tạo rank
+
+func sortArr(arr []int) []int {
+	for i := 0; i < len(arr)-1; i++ {
+		for j := i + 1; j < len(arr); j++ {
+			if arr[i] >= arr[j] {
+				temp := arr[i]
+				arr[i] = arr[j]
+				arr[j] = temp
+			}
+		}
+	}
+	return arr
+}
+
+//sort rank of arrays
+
+func rankSort(arr []int) []int {
+	sliceRank := make([]int, len(arr))
+	arrSort := sortArr(arr)
+	// tạo 1 mảng chứa rank default tăng dần tới len(arr)
+	for i := 0; i < len(arr); i++ {
+		sliceRank[i] = i + 1
+	}
+	//đánh dấu mang rank dựa vào mảng giá trị
+	for j := 0; j < len(arrSort)-1; j++ {
+		if arrSort[j] == arrSort[j+1] {
+			sliceRank[j+1] = j + 1
+		}
+	}
+	// trả về mảng rank
+	return sliceRank
+
+}
+
+// cách 2 tìm rank trên mảng: đang có chút lỗi => fix sau
+func rankSort2(list []int) []int {
+	rank_list := make([]int, len(list))
+	sort_list := make([]int, len(list))
+
+	for i := 0; i < len(list); i++ {
+		for j := 0; j < i; j++ {
+			if list[i] > list[j] {
+				rank_list[i]++
+			} else if list[i] == list[j] {
+				continue
+			} else {
+				rank_list[j]++
+			}
+		}
+	}
+	fmt.Printf("hang cua moi phan tu mang\n")
+	fmt.Printf("\n\t Phan tu\t\tHang\n")
+	for i := 0; i < len(list); i++ {
+		fmt.Printf("\t    %d\t\t\t %d\n", list[i], rank_list[i]+1)
+	}
+
+	for j := 0; j < len(list); j++ {
+		sort_list[rank_list[j]] = list[j]
+	}
+
+	fmt.Printf("\nSap xep mang tang dan theo hang\n\t")
+	for i := 0; i < len(list); i++ {
+		fmt.Printf("%d ", sort_list[i])
+	}
+
+	return sort_list
+
 }
