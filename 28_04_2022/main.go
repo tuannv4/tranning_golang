@@ -6,53 +6,54 @@ import (
 )
 
 func main() {
-	dataType()
-	goVariable()
-	defaultValue()
+	// dataType()
+	// goVariable()
+	// defaultValue()
 
-	// ví dụ ve rune
-	name := "Hello World"
-	printBytes(name)
-	fmt.Printf("\n")
-	printChars(name)
-	fmt.Printf("\n\n")
-	name = "Señor"
-	printBytes(name)
-	fmt.Printf("\n")
-	printChars(name)
+	// // ví dụ ve rune
+	// name := "Hello World"
+	// printBytes(name)
+	// fmt.Printf("\n")
+	// printChars(name)
+	// fmt.Printf("\n\n")
+	// name = "Señor"
+	// printBytes(name)
+	// fmt.Printf("\n")
+	// printChars(name)
 
-	// tạo string từ slice chứa các rune
-	runeSlice := []rune{0x0053, 0x0065, 0x00f1, 0x006f, 0x0072}
-	str := string(runeSlice)
-	fmt.Println(str)
-	// vòng lặp for range của 1 string
-	text := "Señor"
-	for index, rune := range text {
-		fmt.Printf("%c starts at byte %d\n", rune, index)
-	}
-	// tạo string từ slice chức các byte
-	byteSlice := []byte{0x43, 0x61, 0x66, 0xC3, 0xA9}
-	str1 := string(byteSlice)
-	fmt.Println(str1)
+	// // tạo string từ slice chứa các rune
+	// runeSlice := []rune{0x0053, 0x0065, 0x00f1, 0x006f, 0x0072}
+	// str := string(runeSlice)
+	// fmt.Println(str)
+	// // vòng lặp for range của 1 string
+	// text := "Señor"
+	// for index, rune := range text {
+	// 	fmt.Printf("%c starts at byte %d\n", rune, index)
+	// }
+	// // tạo string từ slice chức các byte
+	// byteSlice := []byte{0x43, 0x61, 0x66, 0xC3, 0xA9}
+	// str1 := string(byteSlice)
+	// fmt.Println(str1)
 
-	byteSlice1 := []byte{67, 97, 102, 195, 169}
-	str2 := string(byteSlice1)
-	fmt.Println(str2)
+	// byteSlice1 := []byte{67, 97, 102, 195, 169}
+	// str2 := string(byteSlice1)
+	// fmt.Println(str2)
 
-	// ví dụ mô tả 2 text
-	word1 := "ｿｹｯﾄを作成する"
-	length(word1)
-	fmt.Println("len work1: ", len(word1))
-	word2 := "abcdefghi"
-	length(word2)
-	fmt.Println("len work2: ", len(word2))
+	// // ví dụ mô tả 2 text
+	// word1 := "ｿｹｯﾄを作成する"
+	// length(word1)
+	// fmt.Println("len work1: ", len(word1))
+	// word2 := "abcdefghi"
+	// length(word2)
+	// fmt.Println("len work2: ", len(word2))
 
-	word1Rune := []rune(word1)
-	fmt.Print("sub-string 1 : ")
-	printChars(string(word1Rune[1:]))
+	// word1Rune := []rune(word1)
+	// fmt.Print("sub-string 1 : ")
+	// printChars(string(word1Rune[1:]))
 
-	fmt.Printf("\nsub-string 2 : ")
-	printChars(string(word2[1:]))
+	// fmt.Printf("\nsub-string 2 : ")
+	// printChars(string(word2[1:]))
+	subString(1, 3, "ﾄを作成する")
 
 }
 
@@ -218,4 +219,18 @@ func printChars(s string) {
 
 func length(s string) {
 	fmt.Printf("length of %s is %d\n", s, utf8.RuneCountInString(s))
+}
+
+func subString(startIndex int, endIndex int, s string) string {
+	runes := []rune(s)
+	fmt.Println(len(runes))
+	if startIndex < 0 {
+		startIndex = 0
+	}
+	if endIndex > len(runes) {
+		endIndex = len(runes)
+	}
+	subS := string(runes[startIndex:endIndex])
+	fmt.Printf("%d indexStart %d indexEnd data after sub : %s ", startIndex, endIndex, subS)
+	return subS
 }
