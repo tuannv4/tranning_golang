@@ -6,3 +6,33 @@
 - tiếp tục thực hành tiếp
 3. Vấn đề 
 - Không
+28/04/2020
+1. Công việc hôm nay:
+-thực hành theo công việc được giao buổi sáng
+2. Công việc ngày mai:
+- tiếp tục tranning
+3. Vấn đề 
+- Không
+29/04/2022
+1. Công việc hôm nay:
+- tìm hiểu về thuật toán rank sort
+2. Công việc ngày mai:
+- tiếp tục tranning
+3. Vấn đề 
+- Không
+
+04/05/2022
+1. Công việc hôm nay:
+- update code thuật toán rank sort
+2. Công việc ngày mai:
+- tiếp tục tranning
+3. Vấn đề 
+- Không
+
+05/05/2022
+1. Công việc hôm nay:
+- tim hiểu thêm về goroutines va channel
+2. Công việc ngày mai:
+- tiếp tục tranning
+3. Vấn đề 
+- Không
