@@ -36,3 +36,12 @@
 - tiếp tục tranning
 3. Vấn đề 
 - Không
+
+06/05/2022
+1. Công việc hôm nay:
+- tim hiểu thêm về goroutines va channel
+- tìm hiểu về CRUD
+2. Công việc ngày mai:
+- tìm hiểu về GROM
+3. Vấn đề 
+- Không
