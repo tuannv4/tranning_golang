@@ -162,6 +162,24 @@ func main() {
 		log.Println(result)
 	}
 	fmt.Print("xxx")
+
+	// unbuffered channel
+	ch := make(chan int)
+	go func() {
+		ch <- 100
+		fmt.Print("sent")
+	}()
+	fmt.Println(<-ch)
+	fmt.Println("done")
+
+	// buffered channel
+	ch1 := make(chan int, 2)
+	ch1 <- 1
+	ch1 <- 2
+	close(ch1)
+	fmt.Println(<-ch1)
+	fmt.Println(<-ch1)
+	fmt.Println(<-ch1)
 }
 
 func printfSth(msg string) chan string {
@@ -178,6 +196,7 @@ func fanIn(chan1, chan2 chan string) chan string {
 	c := make(chan string)
 	go func() {
 		for {
+			// select channel
 			select {
 			case <-chan1:
 				c <- <-chan1
