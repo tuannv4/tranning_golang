@@ -45,3 +45,11 @@
 - tìm hiểu về GROM
 3. Vấn đề 
 - Không
+
+09/05/2022
+1. Công việc hôm nay:
+- thêm ví dụ về CRUD sử dụng GORM
+2. Công việc ngày mai:
+- thêm ví dụ về Associations
+3. Vấn đề 
+- Không
