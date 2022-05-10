@@ -23,7 +23,7 @@ type User struct {
 }
 
 func dsn() string {
-	return fmt.Sprintf("%s:%s@tcp(%s)/%s?&parseTime=True", username, password, hostname, dbname)
+	return fmt.Sprintf("%s:%s@tcp(%s)/%s?&charset=utf8mb4&parseTime=True&loc=Local", username, password, hostname, dbname)
 }
 
 func main() {
