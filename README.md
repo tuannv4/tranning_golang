@@ -53,3 +53,11 @@
 - thêm ví dụ về Associations
 3. Vấn đề 
 - Không
+
+10/05/2022
+1. Công việc hôm nay:
+- thêm ví dụ về CRUD API
+2. Công việc ngày mai:
+- thêm ví dụ về Associations
+3. Vấn đề 
+- Không
