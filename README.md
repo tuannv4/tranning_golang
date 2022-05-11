@@ -61,3 +61,11 @@
 - thêm ví dụ về Associations
 3. Vấn đề 
 - Không
+
+10/05/2022
+1. Công việc hôm nay:
+- tìm hiểu và ví dụ về socket
+2. Công việc ngày mai:
+- theo phân công
+3. Vấn đề 
+- Không
